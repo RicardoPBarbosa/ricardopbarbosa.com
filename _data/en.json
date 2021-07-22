@@ -1,3 +1,173 @@
 {
-  "welcome": "Ricardo Barbosa's website"
+  "contacts": {
+    "address": "Porto, Portugal",
+    "email": "ricardopbarbosaa@gmail.com",
+    "phone": "+351 917 721 372",
+    "website": "ricardopbarbosa.com"
+  },
+  "header": {
+    "firstName": "Ricardo",
+    "lastName": "Barbosa",
+    "role": "Software Engineer",
+    "photoAlt": "Ricardo's Photo"
+  },
+  "profile": {
+    "title": "Profile",
+    "body": "Passionate for developing products that impact other people’s lives. As a team player helping my teammates and knowing that I have their help is my everyday motivation to commit to creating applications that combine the art of design with the art of programming. Self-motivated for always be learning and growing as a person and as a part of the team."
+  },
+  "skills": {
+    "title": "Skills",
+    "softSkillsTitle": "Soft skills",
+    "techSkillsTitle": "Tech skills",
+    "softSkills": [
+      "Problem Solving",
+      "Leadership",
+      "Honesty",
+      "Responsibility",
+      "Planning/Organization"
+    ],
+    "techSkills": [
+      {
+        "skill": "HTML & CSS",
+        "subSkills": [
+          "SASS",
+          "Bootstrap",
+          "Material",
+          "TailwindCSS"
+        ]
+      },
+      {
+        "skill": "Javascript",
+        "subSkills": [
+          "Vanilla",
+          "jQuery",
+          "Typescript"
+        ]
+      },
+      {
+        "skill": "React.js",
+        "subSkills": [
+          "Redux",
+          "Next.js"
+        ]
+      },
+      {
+        "skill": "Node.js",
+        "subSkills": [
+          "Express.js",
+          "Adonis.js",
+          "Nest.js"
+        ]
+      },
+      {
+        "skill": "PHP",
+        "subSkills": [
+          "OO",
+          "Laravel"
+        ]
+      },
+      {
+        "skill": "React Native",
+        "subSkills": []
+      },
+      {
+        "skill": "Git",
+        "subSkills": []
+      },
+      {
+        "skill": "SQL",
+        "subSkills": []
+      },
+      {
+        "skill": "Docker",
+        "subSkills": []
+      }
+    ]
+  },
+  "education": {
+    "title": "Education",
+    "degrees": [
+      {
+        "title": "Post-Graduation",
+        "place": "Univ. Fernando Pessoa",
+        "dateRange": "2018 - 2020"
+      },
+      {
+        "title": "BSc Computer Engineering",
+        "place": "Univ. Fernando Pessoa",
+        "dateRange": "2015 - 2018"
+      },
+      {
+        "title": "Undergraduate Degree",
+        "place": "Univ. Fernando Pessoa",
+        "dateRange": "2014 - 2015"
+      }
+    ]
+  },
+  "experience": {
+    "title": "Experience",
+    "entries": [
+      {
+        "role": "Software Engineer",
+        "dateRange": "2020 - 2021",
+        "workPlace": "Kuantokusta",
+        "description": "Played mostly the role of backend developer. Worked with crawlers, microservices, REST API’s, and legacy code. Technologies used: Nest.js, PHP, React.js, Node.js, Redis, Docker, PM2, MySQL, PostgreSQL, MongoDB."
+      },
+      {
+        "role": "Freelancing",
+        "dateRange": "2020 - 2021",
+        "workPlace": "anapintoterapeuta.pt",
+        "description": "Web solution for a massage therapist consisting of the frontend website for clients to make appointments, generate custom vouchers, profile page with their history and a blog. A backoffice for the therapist to manage all aspects of her business and her website. And a REST API properly protected, with roles, to handle the requests from both applications. Technologies used: Next.js, React.js, Adonis.js, BullMQ, PostgreSQL."
+      },
+      {
+        "role": "Software Engineer",
+        "dateRange": "2018 - 2020",
+        "workPlace": "Hospital-Escola Universidade Fernando Pessoa",
+        "description": "I played many roles, including designer, dev-ops, frontend, backend, full-stack and mobile developer. Technologies used: Adobe XD, Laravel, jQuery, Golang, React Native, Websockets, NGINX, supervisor, cron."
+      },
+      {
+        "role": "Freelancing",
+        "dateRange": "2016",
+        "workPlace": "fapocril.com",
+        "description": "Fully developed the company website from the design until the deployment, with a fully-featured back-office. Used OO PHP, jQuery and SEO practices."
+      },
+      {
+        "role": "Internship - Web Developer",
+        "dateRange": "2015",
+        "workPlace": "Moveistore",
+        "description": "Developed a website to redirect customers of a specific niche of furniture to the main company website. Worked with PHP, jQuery and applied SEO practices."
+      }
+    ]
+  },
+  "languages": {
+    "title": "Languages",
+    "list": [
+      {
+        "language": "Portuguese",
+        "level": "Native"
+      },
+      {
+        "language": "English",
+        "level": "Advanced"
+      },
+      {
+        "language": "German",
+        "level": "Beginner"
+      },
+      {
+        "language": "Spanish",
+        "level": "Basic understanding"
+      }
+    ]
+  },
+  "interests": {
+    "title": "Interests",
+    "list": [
+      "Traveling",
+      "Reading",
+      "Cinema",
+      "Music",
+      "Technology"
+    ]
+  }
 }

@@ -2,10 +2,19 @@ import { FC, ReactElement } from 'react'
 import { GetStaticProps } from 'next'
 import { promises as fs } from 'fs'
 import Head from 'next/head'
-import Link from 'next/link'
 import path from 'path'
 
 import { Data } from 'types/data'
+
+import Header from 'components/Header'
+import Drawer from 'components/Drawer'
+
+import Profile from 'sections/Profile'
+import Skills from 'sections/Skills'
+import Education from 'sections/Education'
+import Experience from 'sections/Experience'
+import Languages from 'sections/Languages'
+import Interests from 'sections/Interests'
 
 type Props = {
   data: Data
@@ -13,27 +22,30 @@ type Props = {
 
 const Home: FC<Props> = ({ data }): ReactElement => {
   return (
-    <div className="h-screen px-2 flex flex-col justify-center items-center">
+    <>
       <Head>
-        <title>Welcome</title>
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="description" content="Ricardo Barbosa's website" />
+        <title>Ricardo Barbosa - Resume</title>
+        <meta name="description" content="Ricardo Barbosa's resume" />
       </Head>
 
-      <main className="py-20 flex-1 flex flex-col justify-center items-center">
-        <h1 className="font-display uppercase font-light tracking-widest text-xl">
-          {data.welcome}
-        </h1>
-        <div className="flex space-x-4 mt-2">
-          <Link href="/" locale="pt">
-            <a className="font-display font-bold">PT</a>
-          </Link>
-          <Link href="/" locale="en">
-            <a className="font-display font-bold">EN</a>
-          </Link>
+      <main className="flex flex-col w-full min-h-screen 2xl:max-w-screen-2xl m-auto relative">
+        <Header data={data.header} />
+        <div className="flex flex-col mt-20 px-2">
+          <Profile data={data.profile} />
+          <div className="h-7" />
+          <Skills data={data.skills} />
+          <div className="h-7" />
+          <Education data={data.education} />
+          <div className="h-7" />
+          <Experience data={data.experience} />
+          <div className="h-7" />
+          <Languages data={data.languages} />
+          <div className="h-7" />
+          <Interests data={data.interests} />
         </div>
+        <Drawer data={data.contacts} />
       </main>
-    </div>
+    </>
   )
 }
 

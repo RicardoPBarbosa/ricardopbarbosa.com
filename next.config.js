@@ -3,5 +3,6 @@ module.exports = {
     locales: ['en', 'pt'],
     defaultLocale: 'en',
     localeDetection: false
-  }
+  },
+  // webpack5: false,
 }

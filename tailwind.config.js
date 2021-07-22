@@ -1,5 +1,5 @@
 module.exports = {
-  mode: 'jit',
+  // mode: 'jit',
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   darkMode: false,
   theme: {
@@ -7,7 +7,12 @@ module.exports = {
       'display': ['Manrope', 'sans-serif'],
       'body': ['Quicksand', 'serif'],
     },
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#CDD2D2',
+        secondary: '#EBE8EB'
+      },
+    },
   },
   variants: {
     extend: {},
