@@ -30,7 +30,7 @@ const Home: FC<Props> = ({ data, locale }): ReactElement => (
 
     <main className="flex flex-col w-full min-h-screen 2xl:max-w-screen-2xl m-auto relative pb-6">
       <Header data={data.header} />
-      <div className="flex flex-col mt-20 px-2">
+      <div className="flex flex-col mt-20 px-2 sm:px-6">
         <Profile data={data.profile} />
         <div className="h-7" />
         <Skills data={data.skills} />

@@ -6,8 +6,8 @@ import { Header as HeaderData } from 'types/data'
 
 const Header: FC<{ data: HeaderData }> = ({ data }) => (
   <div className="bg-primary h-48 2xl:h-[345px] z-10 relative after:z-[-1] after:bg-primary after:w-full after:h-4/5 after:absolute after:bottom-0 after:origin-right after:transform after:skew-y-[-7.3deg]">
-    <div className="flex flex-col 2xl:flex-row h-full pr-2 2xl:pr-44 pl-2 2xl:pl-11 2xl:items-end justify-end 2xl:justify-between relative">
-      <div className="absolute left-0 -bottom-20 pl-2 flex flex-col items-center">
+    <div className="flex flex-col 2xl:flex-row h-full pr-2 2xl:pr-44 pl-2 sm:pl-6 2xl:pl-11 2xl:items-end justify-end 2xl:justify-between relative">
+      <div className="absolute left-0 -bottom-20 pl-2 sm:pl-6 flex flex-col items-center">
         <div className="bg-gray-800 rounded-full w-2 h-2" />
         <div className="bg-gray-800 w-[0.15rem] h-28 mt-2" />
       </div>
