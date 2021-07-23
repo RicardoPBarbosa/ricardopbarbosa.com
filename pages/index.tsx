@@ -18,36 +18,35 @@ import Interests from 'sections/Interests'
 
 type Props = {
   data: Data
+  locale: string
 }
 
-const Home: FC<Props> = ({ data }): ReactElement => {
-  return (
-    <>
-      <Head>
-        <title>Ricardo Barbosa - Resume</title>
-        <meta name="description" content="Ricardo Barbosa's resume" />
-      </Head>
+const Home: FC<Props> = ({ data, locale }): ReactElement => (
+  <>
+    <Head>
+      <title>Ricardo Barbosa - Resume</title>
+      <meta name="description" content="Ricardo Barbosa's resume" />
+    </Head>
 
-      <main className="flex flex-col w-full min-h-screen 2xl:max-w-screen-2xl m-auto relative">
-        <Header data={data.header} />
-        <div className="flex flex-col mt-20 px-2">
-          <Profile data={data.profile} />
-          <div className="h-7" />
-          <Skills data={data.skills} />
-          <div className="h-7" />
-          <Education data={data.education} />
-          <div className="h-7" />
-          <Experience data={data.experience} />
-          <div className="h-7" />
-          <Languages data={data.languages} />
-          <div className="h-7" />
-          <Interests data={data.interests} />
-        </div>
-        <Drawer data={data.contacts} />
-      </main>
-    </>
-  )
-}
+    <main className="flex flex-col w-full min-h-screen 2xl:max-w-screen-2xl m-auto relative pb-6">
+      <Header data={data.header} />
+      <div className="flex flex-col mt-20 px-2">
+        <Profile data={data.profile} />
+        <div className="h-7" />
+        <Skills data={data.skills} />
+        <div className="h-7" />
+        <Education data={data.education} />
+        <div className="h-7" />
+        <Experience data={data.experience} />
+        <div className="h-7" />
+        <Languages data={data.languages} />
+        <div className="h-7" />
+        <Interests data={data.interests} />
+      </div>
+      <Drawer locale={locale} data={data.contacts} />
+    </main>
+  </>
+)
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const dataPath = path.join(process.cwd(), `_data/${locale}.json`)
@@ -61,7 +60,8 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 
   return {
     props: {
-      data: JSON.parse(data)
+      data: JSON.parse(data),
+      locale
     }
   }
 }
