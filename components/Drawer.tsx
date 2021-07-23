@@ -18,22 +18,14 @@ const Drawer: FC<{ data: ContactsData }> = ({ data }) => {
       <Transition
         show={menuOpen}
         enter="transition-transform ease-in duration-100 transform"
-        enterFrom="translate-y-56"
+        enterFrom="translate-y-60"
         enterTo="-translate-y-0"
         leave="transition-transform ease-in duration-75 transform"
         leaveFrom="-translate-y-0"
-        leaveTo="translate-y-56"
+        leaveTo="translate-y-60"
       >
-        <div className="origin-bottom fixed bottom-0 w-full h-56 bg-primary z-10 rounded-lg pl-2 pr-14 pb-14">
-          <div className="flex space-x-4 mt-4">
-            <Link href="/" locale="pt">
-              <a className="font-display font-bold">PT</a>
-            </Link>
-            <Link href="/" locale="en">
-              <a className="font-display font-bold">EN</a>
-            </Link>
-          </div>
-          <div className="flex flex-col space-y-2 mt-3">
+        <div className="origin-bottom fixed bottom-0 w-full h-60 bg-primary z-10 rounded-lg pl-2 pr-14 pb-14 pt-4">
+          <div className="flex flex-col space-y-2">
             <ul className="flex flex-col space-y-2">
               <li className="flex items-center space-x-2">
                 <span className="bg-gray-800 w-7 h-7 rounded-full flex justify-center items-center">
@@ -68,6 +60,18 @@ const Drawer: FC<{ data: ContactsData }> = ({ data }) => {
                 </p>
               </li>
             </ul>
+          </div>
+          <div className="flex space-x-2 mt-4 items-center">
+            <Link href="/" locale="pt">
+              <a className="bg-gray-800 text-white rounded-md py-1 px-2 shadow-sm font-display font-medium">
+                PT
+              </a>
+            </Link>
+            <Link href="/" locale="en">
+              <a className="text-gray-800 rounded-md py-1 px-2 shadow-sm font-display font-medium">
+                EN
+              </a>
+            </Link>
           </div>
         </div>
       </Transition>
