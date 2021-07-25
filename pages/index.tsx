@@ -11,10 +11,11 @@ import Drawer from 'components/Drawer'
 
 import Profile from 'sections/Profile'
 import Skills from 'sections/Skills'
-import Education from 'sections/Education'
-import Experience from 'sections/Experience'
 import Languages from 'sections/Languages'
 import Interests from 'sections/Interests'
+import Contacts from 'sections/Contacts'
+import Education from 'sections/Education'
+import Experience from 'sections/Experience'
 
 type Props = {
   data: Data
@@ -28,19 +29,15 @@ const Home: FC<Props> = ({ data, locale }): ReactElement => (
       <meta name="description" content="Ricardo Barbosa's resume" />
     </Head>
 
-    <main className="flex flex-col w-full min-h-screen 2xl:max-w-screen-2xl m-auto relative pb-6">
+    <main className="grid grid-cols-1 w-full min-h-screen 2xl:max-w-screen-2xl m-auto relative pb-6">
       <Header data={data.header} />
-      <div className="flex flex-col mt-20 px-2 sm:px-6">
+      <div className="main-grid mt-24 sm:mt-36 md:mt-40 md-lg:mt-52 xl:mt-56 px-3 sm:px-8 md:px-12 lg:max-w-screen-2xl lg:mx-auto">
+        <Contacts data={data.contacts} display="body" />
         <Profile data={data.profile} />
-        <div className="h-7" />
         <Skills data={data.skills} />
-        <div className="h-7" />
-        <Education data={data.education} />
-        <div className="h-7" />
         <Experience data={data.experience} />
-        <div className="h-7" />
+        <Education data={data.education} />
         <Languages data={data.languages} />
-        <div className="h-7" />
         <Interests data={data.interests} />
       </div>
       <Drawer locale={locale} data={data.contacts} />

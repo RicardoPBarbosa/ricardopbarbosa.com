@@ -6,7 +6,7 @@ import SectionTitle from 'components/SectionTitle'
 
 const Education: FC<{ data: EducationData }> = ({ data }) => {
   return (
-    <div className="flex flex-col">
+    <div className="mt-7 education-area">
       <SectionTitle>{data.title}</SectionTitle>
       <div className="flex flex-col space-y-2">
         {data.degrees.map((degree: Degree) => (
@@ -16,13 +16,13 @@ const Education: FC<{ data: EducationData }> = ({ data }) => {
               <div className="h-full w-0.5 bg-gray-800 mt-2"></div>
             </div>
             <div className="flex flex-col flex-1 pb-2">
-              <h4 className="uppercase font-display text-gray-700 font-extrabold leading-3 tracking-wider text-sm mb-1">
+              <h4 className="uppercase font-display text-gray-700 font-extrabold leading-3 md:leading-4 tracking-wider text-sm md:text-base mb-1">
                 {degree.title}
               </h4>
-              <p className="font-display text-gray-500 font-normal tracking-wider text-sm">
+              <p className="font-display text-gray-500 font-normal tracking-wider text-sm md:text-base">
                 {degree.place}
               </p>
-              <p className="font-display text-gray-500 font-normal tracking-wider text-sm">
+              <p className="font-display text-gray-500 font-normal tracking-wider text-sm md:text-base">
                 {degree.dateRange}
               </p>
             </div>

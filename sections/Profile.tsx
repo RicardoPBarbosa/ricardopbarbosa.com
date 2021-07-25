@@ -7,7 +7,7 @@ import SectionTitle from 'components/SectionTitle'
 
 const Profile: FC<{ data: ProfileData }> = ({ data }) => {
   return (
-    <div className="flex flex-col">
+    <div className="profile-area">
       <SectionTitle>{data.title}</SectionTitle>
       <Body>{data.body}</Body>
     </div>

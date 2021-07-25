@@ -44,3 +44,55 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.contacts-area {
+  grid-area: contacts;
+}
+
+.profile-area {
+  grid-area: profile;
+}
+
+.education-area {
+  grid-area: education;
+}
+
+.experience-area {
+  grid-area: experience;
+}
+
+.skills-area {
+  grid-area: skills;
+}
+
+.languages-area {
+  grid-area: languages;
+}
+
+.interests-area {
+  grid-area: interests;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "profile"
+    "skills"
+    "experience"
+    "education"
+    "languages"
+    "interests";
+}
+@media (min-width: 768px) {
+  .main-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas: 
+      "contacts profile"
+      "education experience"
+      "skills experience"
+      "languages experience"
+      "interests experience";
+  }
+}
