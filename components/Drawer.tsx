@@ -95,6 +95,7 @@ const Drawer: FC<{ data: ContactsData; locale: string }> = ({
         </Transition>
         <button
           className="absolute bottom-4 md:bottom-8 right-4 md:right-8 w-16 h-16 z-20 bg-gray-800 flex justify-center items-center rounded-full shadow-md text-secondary"
+          aria-label="Open Menu"
           onClick={() => setMenuOpen((prev: boolean) => !prev)}
         >
           {menuOpen ? <RiCloseFill size={24} /> : <RiMenu5Fill size={24} />}
