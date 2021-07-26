@@ -58,7 +58,7 @@ const Drawer: FC<{ data: ContactsData; locale: string }> = ({
                 <a
                   className="flex-1 border-2 border-gray-800 h-12 rounded-full flex justify-center items-center text-gray-800 hover:bg-gray-800 hover:text-secondary"
                   target="_blank"
-                  download
+                  download="ricardobarbosa-resume.pdf"
                 >
                   <HiDownload size={22} />
                   <span className="font-body ml-2 text-sm font-medium tracking-wide">
