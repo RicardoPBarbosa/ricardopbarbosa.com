@@ -1,10 +1,13 @@
 import { FC, ReactElement } from 'react'
 import { GetStaticProps } from 'next'
 import { promises as fs } from 'fs'
+import Script from 'next/script'
 import Head from 'next/head'
 import path from 'path'
 
 import { Data } from 'types/data'
+
+import { GA_TRACKING_ID } from 'lib/gtag'
 
 import Header from 'components/Header'
 import Drawer from 'components/Drawer'
@@ -28,6 +31,26 @@ const Home: FC<Props> = ({ data, locale }): ReactElement => (
       <title>Ricardo Barbosa</title>
       <meta name="description" content="Ricardo Barbosa's website" />
     </Head>
+
+    <Script
+      src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+    />
+    <Script
+      dangerouslySetInnerHTML={{
+        __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GA_TRACKING_ID}', {
+            page_path: window.location.pathname,
+          });
+
+          window.recaptchaOptions = {
+            useRecaptchaNet: true,
+          };
+        `
+      }}
+    />
 
     <main className="grid grid-cols-1 w-full min-h-screen 2xl:max-w-screen-2xl m-auto relative pb-6">
       <Header data={data.header} />
