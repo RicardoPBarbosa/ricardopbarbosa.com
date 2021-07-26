@@ -25,8 +25,8 @@ type Props = {
 const Home: FC<Props> = ({ data, locale }): ReactElement => (
   <>
     <Head>
-      <title>Ricardo Barbosa - Resume</title>
-      <meta name="description" content="Ricardo Barbosa's resume" />
+      <title>Ricardo Barbosa</title>
+      <meta name="description" content="Ricardo Barbosa's website" />
     </Head>
 
     <main className="grid grid-cols-1 w-full min-h-screen 2xl:max-w-screen-2xl m-auto relative pb-6">
