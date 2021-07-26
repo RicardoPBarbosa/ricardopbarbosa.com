@@ -5,7 +5,10 @@ import { GrLinkedinOption, GrGithub } from 'react-icons/gr'
 import { HiDownload } from 'react-icons/hi'
 
 import Contacts from 'sections/Contacts'
+
 import Transition from 'components/Transition'
+
+import * as gtag from 'lib/gtag'
 
 import { Contacts as ContactsData } from 'types/data'
 
@@ -14,6 +17,17 @@ const Drawer: FC<{ data: ContactsData; locale: string }> = ({
   locale
 }) => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false)
+
+  const downloadAction = () => {
+    if (process.env.NODE_ENV === 'production') {
+      gtag.event({
+        action: 'select_content',
+        category: 'engagement',
+        label: 'Download CV',
+        value: locale
+      })
+    }
+  }
 
   return (
     <>
@@ -59,6 +73,7 @@ const Drawer: FC<{ data: ContactsData; locale: string }> = ({
                   className="flex-1 border-2 border-gray-800 h-12 rounded-full flex justify-center items-center text-gray-800 hover:bg-gray-800 hover:text-secondary"
                   target="_blank"
                   download="ricardobarbosa-resume.pdf"
+                  onClick={downloadAction}
                 >
                   <HiDownload size={22} />
                   <span className="font-body ml-2 text-sm font-medium tracking-wide">
