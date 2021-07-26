@@ -19,12 +19,14 @@ const Drawer: FC<{ data: ContactsData; locale: string }> = ({
   const [menuOpen, setMenuOpen] = useState<boolean>(false)
 
   const downloadAction = () => {
-    gtag.event({
-      action: 'select_content',
-      category: 'engagement',
-      label: 'Download CV',
-      value: locale
-    })
+    if (process.env.NODE_ENV === 'production') {
+      gtag.event({
+        action: 'select_content',
+        category: 'engagement',
+        label: 'Download CV',
+        value: locale
+      })
+    }
   }
 
   return (

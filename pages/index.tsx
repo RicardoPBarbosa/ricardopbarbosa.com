@@ -44,10 +44,6 @@ const Home: FC<Props> = ({ data, locale }): ReactElement => (
           gtag('config', '${GA_TRACKING_ID}', {
             page_path: window.location.pathname,
           });
-
-          window.recaptchaOptions = {
-            useRecaptchaNet: true,
-          };
         `
       }}
     />
