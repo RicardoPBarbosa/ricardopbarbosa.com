@@ -23,12 +23,9 @@ module.exports = {
         primary: '#CDD2D2',
         secondary: '#EBE8EB'
       },
-      // screens: {
-      //   'md-lg': '880px',
-      // },
       margin: {
         '-2.5': '-0.65rem',
-       }
+      }
     },
   },
   variants: {

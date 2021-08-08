@@ -64,8 +64,9 @@ export type Interests = {
 export type Contacts = {
   address: string
   email: string
-  phone: string
   website: string
+  linkedin: string
+  github: string
 }
 
 export type Data = {

@@ -2,8 +2,9 @@
   "contacts": {
     "address": "Porto, Portugal",
     "email": "ricardopbarbosaa@gmail.com",
-    "phone": "+351 917 721 372",
-    "website": "ricardopbarbosa.com"
+    "website": "ricardopbarbosa.com",
+    "linkedin": "linkedin.com/in/ricardopbarbosa",
+    "github": "github.com/RicardoPBarbosa"
   },
   "header": {
     "firstName": "Ricardo",
