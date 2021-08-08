@@ -1,7 +1,6 @@
 import { FC, useState } from 'react'
 import Link from 'next/link'
 import { RiMenu5Fill, RiCloseFill } from 'react-icons/ri'
-import { GrLinkedinOption, GrGithub } from 'react-icons/gr'
 import { HiDownload } from 'react-icons/hi'
 
 import Contacts from 'sections/Contacts'
@@ -43,31 +42,7 @@ const Drawer: FC<{ data: ContactsData; locale: string }> = ({
         >
           <div className="origin-bottom w-full md:w-2/6 xl:w-[300px] h-96 md:h-auto right-0 bg-primary z-10 rounded-t-2xl pl-4 pr-4 sm:pr-20 md:pr-4 pt-4 md:pb-11 flex flex-col md:justify-between">
             <Contacts data={data} display="drawer" />
-            <div className="flex space-x-2 mt-4 md:mt-0 items-center">
-              <Link href="https://linkedin.com/in/ricardopbarbosa">
-                <a
-                  className="flex-1 bg-gray-800 h-12 rounded-full flex justify-center items-center text-secondary hover:bg-secondary hover:text-gray-800"
-                  target="_blank"
-                >
-                  <GrLinkedinOption size={16} />
-                  <span className="font-body ml-2 text-sm font-medium tracking-wide">
-                    LinkedIn
-                  </span>
-                </a>
-              </Link>
-              <Link href="https://github.com/RicardoPBarbosa">
-                <a
-                  className="flex-1 bg-gray-800 h-12 rounded-full flex justify-center items-center text-secondary hover:bg-secondary hover:text-gray-800"
-                  target="_blank"
-                >
-                  <GrGithub size={18} />
-                  <span className="font-body ml-2 text-sm font-medium tracking-wide">
-                    Github
-                  </span>
-                </a>
-              </Link>
-            </div>
-            <div className="flex mt-3 items-center">
+            <div className="flex my-6 md:mt-1 items-center">
               <Link href={`/cv/${locale}.pdf`}>
                 <a
                   className="flex-1 border-2 border-gray-800 h-12 rounded-full flex justify-center items-center text-gray-800 hover:bg-gray-800 hover:text-secondary"
@@ -82,7 +57,7 @@ const Drawer: FC<{ data: ContactsData; locale: string }> = ({
                 </a>
               </Link>
             </div>
-            <div className="flex space-x-2 mt-7 items-center">
+            <div className="flex space-x-2 items-center">
               <Link href="/" locale="pt">
                 <a
                   className={`${
