@@ -80,6 +80,10 @@
         "subSkills": []
       },
       {
+        "skill": "NoSQL",
+        "subSkills": []
+      },
+      {
         "skill": "Docker",
         "subSkills": []
       }
@@ -110,6 +114,12 @@
     "entries": [
       {
         "role": "Software Engineer",
+        "dateRange": "2021 - Presente",
+        "workPlace": "5Mins.ai",
+        "description": "A desempenhar o papel de full-stack para construir o produto \"core\". Desde a lógica de back-end e API, app Web e app móvel \"cross-platform\". Tecnologias usadas: React Native, React.js, Node.js, Typescript, Firebase, MongoDB."
+      },
+      {
+        "role": "Software Engineer",
         "dateRange": "2020 - 2021",
         "workPlace": "Kuantokusta",
         "description": "Desempenhei principalmente o papel de backend. Trabalhei com crawlers, microsserviços, APIs REST, e código legacy. Tecnologias usadas: Nest.js, PHP, React.js, Node.js, Redis, Docker, PM2, MySQL, PostgreSQL, MongoDB."
@@ -124,7 +134,7 @@
         "role": "Software Engineer",
         "dateRange": "2018 - 2020",
         "workPlace": "Hospital-Escola Universidade Fernando Pessoa",
-        "description": "Desempenhei muitos papéis, passei por designer, dev-ops, frontend, backend, full-stack e mobile developer. Tecnologias usadas: Adobe XD, Laravel, jQuery, Golang, React Native, Websockets, NGINX, supervisor, cron."
+        "description": "Desempenhei muitos papéis, passei por designer, dev-ops, frontend, backend e mobile developer. Tecnologias usadas: Adobe XD, Laravel, jQuery, Golang, React Native, Websockets, NGINX, supervisor, cron."
       },
       {
         "role": "Freelancing",
