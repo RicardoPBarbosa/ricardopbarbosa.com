@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import Image from 'next/image'
 
-import Photo from 'public/static/ricardo.png'
+import Photo from 'public/static/ricardo.jpeg'
 import { Header as HeaderData } from 'types/data'
 
 const Header: FC<{ data: HeaderData }> = ({ data }) => (
