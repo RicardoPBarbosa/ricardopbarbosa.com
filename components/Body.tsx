@@ -1,7 +1,7 @@
-import { FC } from 'react'
+import { ReactNode } from 'react'
 
-const Body: FC = ({ children }) => (
-  <p className="font-body font-medium text-gray-600 md:text-lg">{children}</p>
+const Body = ({ children }: { children: ReactNode }) => (
+  <p className="font-medium text-gray-600 font-body md:text-lg">{children}</p>
 )
 
 export default Body
