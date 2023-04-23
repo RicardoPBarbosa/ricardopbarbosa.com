@@ -2,6 +2,7 @@ import { FC, ReactElement, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { AppProps } from 'next/app'
 import * as gtag from 'lib/gtag'
+import { Analytics } from '@vercel/analytics/react'
 
 import 'styles/globals.css'
 
@@ -20,7 +21,12 @@ const App: FC<AppProps> = ({ Component, pageProps }): ReactElement => {
     }
   }, [router.events])
 
-  return <Component {...pageProps} />
+  return (
+    <>
+      <Component {...pageProps} />
+      <Analytics />
+    </>
+  )
 }
 
 export default App
