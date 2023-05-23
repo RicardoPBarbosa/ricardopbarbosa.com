@@ -131,6 +131,12 @@
         "description": "Web solution for a massage therapist consisting of the frontend website for clients to make appointments, generate custom vouchers, profile page with their history and a blog. A backoffice for the therapist to manage all aspects of her business and her website. And a REST API properly protected, with roles, to handle the requests from both applications. Technologies used: Next.js, React.js, Adonis.js, BullMQ, PostgreSQL."
       },
       {
+        "role": "Freelancing",
+        "dateRange": "2020 - 2020",
+        "workPlace": "migueltrigo.eu",
+        "description": "Portfolio website for a lecturer, writer, and teacher. Developed the admin portal to manage the blog, testimonials, lectures, and lecture requests sent from the website, and the backend (API w/ translations) to support both the admin portal and the website. Technologies used: Laravel, Inertia.js (React.js), Redis, PostgreSQL."
+      },
+      {
         "role": "Software Engineer",
         "dateRange": "2018 - 2020",
         "workPlace": "Hospital-Escola Universidade Fernando Pessoa",

@@ -131,6 +131,12 @@
         "description": "Solução web para terapeuta, composta pelo site frontend para clientes marcarem consultas, gerarem vouchers personalizados, página de perfil com o seu histórico e um blog. Um backoffice para a terapeuta gerir todos os aspetos do seu negócio e do seu site. E uma API REST devidamente protegida com cargos, para tratar as solicitações de ambas as aplicações. Tecnologias usadas: Next.js, React.js, Adonis.js, BullMQ, PostgreSQL."
       },
       {
+        "role": "Freelancing",
+        "dateRange": "2020 - 2020",
+        "workPlace": "migueltrigo.eu",
+        "description": "Site portfólio para um orador, escritor e professor. Desenvolvi o portal de administração para gerir o blog, testemunhos, palestras e solicitações para palestras enviadas do site e o backend (API c/ traduções) para dar suporte ao portal e ao site. Tecnologias utilizadas: Laravel, Inertia.js (React.js), Redis, PostgreSQL."
+      },
+      {
         "role": "Software Engineer",
         "dateRange": "2018 - 2020",
         "workPlace": "Hospital-Escola Universidade Fernando Pessoa",
