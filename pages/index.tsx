@@ -51,7 +51,7 @@ const Home: FC<Props> = ({ data, locale }): ReactElement => (
 
     <main className="relative grid w-full min-h-screen grid-cols-1 pb-6 m-auto 2xl:max-w-screen-2xl">
       <Header data={data.header} />
-      <div className="px-3 mt-24 main-grid sm:mt-36 md:mt-40 md-lg:mt-52 xl:mt-56 sm:px-8 md:px-12 lg:max-w-screen-2xl lg:mx-auto">
+      <div className="px-3 mt-24 mb-16 main-grid sm:mt-36 md:mt-40 md-lg:mt-52 xl:mt-56 sm:px-8 md:px-12 lg:max-w-screen-2xl lg:mx-auto">
         <Contacts data={data.contacts} display="body" />
         <Profile data={data.profile} />
         <Skills data={data.skills} />
