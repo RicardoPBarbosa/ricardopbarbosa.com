@@ -31,7 +31,7 @@ const Home: FC<Props> = ({ data, locale }): ReactElement => (
     </Head>
 
     <Script
-      src="https://analytics.ricardopbarbosa.com/nao/bloqueies/por/favor"
+      src="https://analytics.ricardopbarbosa.com/nao-bloqueies-por-favor"
       data-website-id="82c94d84-1068-463a-9fce-b9d11220876e"
       defer
     />
