@@ -7,8 +7,6 @@ import path from 'path'
 
 import { Data } from 'types/data'
 
-import { GA_TRACKING_ID } from 'lib/gtag'
-
 import Header from 'components/Header'
 import Drawer from 'components/Drawer'
 
@@ -33,20 +31,9 @@ const Home: FC<Props> = ({ data, locale }): ReactElement => (
     </Head>
 
     <Script
-      src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-    />
-    <Script
-      id="gtag-init"
-      dangerouslySetInnerHTML={{
-        __html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${GA_TRACKING_ID}', {
-            page_path: window.location.pathname,
-          });
-        `
-      }}
+      src="https://analytics.ricardopbarbosa.com/nao/bloqueies/por/favor"
+      data-website-id="82c94d84-1068-463a-9fce-b9d11220876e"
+      defer
     />
 
     <main className="relative grid w-full min-h-screen grid-cols-1 pb-6 m-auto 2xl:max-w-screen-2xl">

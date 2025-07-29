@@ -7,7 +7,7 @@ import Contacts from 'sections/Contacts'
 
 import Transition from 'components/Transition'
 
-import * as gtag from 'lib/gtag'
+import { track } from 'lib/tracking'
 
 import { Contacts as ContactsData } from 'types/data'
 
@@ -19,18 +19,13 @@ const Drawer: FC<{ data: ContactsData; locale: string }> = ({
 
   const downloadAction = () => {
     if (process.env.NODE_ENV === 'production') {
-      gtag.event({
-        action: 'select_content',
-        category: 'engagement',
-        label: 'Download CV',
-        value: locale
-      })
+      track('Download CV', { locale })
     }
   }
 
   return (
     <>
-      <div className="fixed bottom-0 w-screen max-w-screen-2xl 2xl:m-auto z-20 flex justify-end">
+      <div className="fixed bottom-0 z-20 flex justify-end w-screen max-w-screen-2xl 2xl:m-auto">
         <Transition
           show={menuOpen}
           enter="transition-transform ease-in duration-100 transform"
@@ -42,22 +37,22 @@ const Drawer: FC<{ data: ContactsData; locale: string }> = ({
         >
           <div className="origin-bottom w-full md:w-2/6 xl:w-[300px] h-96 md:h-auto right-0 bg-primary z-10 rounded-t-2xl pl-4 pr-4 sm:pr-20 md:pr-4 pt-4 md:pb-11 flex flex-col md:justify-between">
             <Contacts data={data} display="drawer" />
-            <div className="flex my-6 md:mt-1 items-center">
+            <div className="flex items-center my-6 md:mt-1">
               <Link href={`/cv/${locale}.pdf`}>
                 <a
-                  className="flex-1 border-2 border-gray-800 h-12 rounded-full flex justify-center items-center text-gray-800 hover:bg-gray-800 hover:text-secondary"
+                  className="flex items-center justify-center flex-1 h-12 text-gray-800 border-2 border-gray-800 rounded-full hover:bg-gray-800 hover:text-secondary"
                   target="_blank"
                   download="ricardobarbosa-resume.pdf"
                   onClick={downloadAction}
                 >
                   <HiDownload size={22} />
-                  <span className="font-body ml-2 text-sm font-medium tracking-wide">
+                  <span className="ml-2 text-sm font-medium tracking-wide font-body">
                     Download CV
                   </span>
                 </a>
               </Link>
             </div>
-            <div className="flex space-x-2 items-center">
+            <div className="flex items-center space-x-2">
               <Link href="/" locale="pt">
                 <a
                   className={`${
@@ -84,7 +79,7 @@ const Drawer: FC<{ data: ContactsData; locale: string }> = ({
           </div>
         </Transition>
         <button
-          className="absolute bottom-4 md:bottom-8 right-4 md:right-8 w-16 h-16 z-20 bg-gray-800 flex justify-center items-center rounded-full shadow-md text-secondary"
+          className="absolute z-20 flex items-center justify-center w-16 h-16 bg-gray-800 rounded-full shadow-md bottom-4 md:bottom-8 right-4 md:right-8 text-secondary"
           aria-label="Open Menu"
           onClick={() => setMenuOpen((prev: boolean) => !prev)}
         >
