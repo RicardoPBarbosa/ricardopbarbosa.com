@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "rm -rf .next & next build",
+    "dev": "export SET NODE_OPTIONS=--openssl-legacy-provider && next dev",
+    "build": "export SET NODE_OPTIONS=--openssl-legacy-provider && rm -rf .next & next build",
     "start": "next start",
     "lint": "next lint"
   },

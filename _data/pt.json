@@ -116,7 +116,7 @@
         "role": "Software Engineer",
         "dateRange": "2021 - Presente",
         "workPlace": "5Mins.ai",
-        "description": "A desempenhar o papel de full-stack para construir o produto \"core\". Desde a lógica de back-end e API, app Web e app móvel \"cross-platform\". Tecnologias usadas: React Native, React.js, Node.js, Typescript, Firebase, MongoDB."
+        "description": "- Lidero a adoção interna de ferramentas de IA generativa, movendo a equipa de processos manuais para fluxos de trabalho aumentados por IA.\n- Mentoria interna em IA: Atuo como especialista de referência, capacitando colegas em engenharia de prompts, ética de IA e melhores práticas específicas de ferramentas.\n- Criei de raiz a versão web da plataforma, crucial para a implementação de ferramentas de relatórios e gestão, o que aumentou significativamente a retenção.\n- Desenvolvimento full-stack para a aplicação multiplataforma principal da empresa usando React Native. A maioria das funcionalidades também está replicada na aplicação web (React.js) e backend com Node.js + GraphQL."
       },
       {
         "role": "Software Engineer",
