@@ -2,31 +2,40 @@
   "name": "nextjs",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "npm@11.19.1",
+  "engines": {
+    "node": ">=24.22.1 <25",
+    "npm": ">=11.19.1 <12"
+  },
   "scripts": {
-    "dev": "export SET NODE_OPTIONS=--openssl-legacy-provider && next dev",
-    "build": "export SET NODE_OPTIONS=--openssl-legacy-provider && rm -rf .next & next build",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
-    "next": "^11.0.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-icons": "^4.2.0",
-    "react-transition-group": "^4.4.2"
+    "next": "16.4.3",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-icons": "5.7.0",
+    "react-transition-group": "4.4.5"
   },
   "devDependencies": {
-    "@types/react": "^18.0.1",
-    "@types/react-transition-group": "^4.4.2",
-    "@typescript-eslint/eslint-plugin": "^4.28.3",
-    "autoprefixer": "^10.3.1",
-    "eslint": "^7.31.0",
-    "eslint-config-next": "^11.0.1",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.0",
-    "postcss": "^8.3.6",
-    "prettier": "^2.3.2",
-    "tailwindcss": "^2.2.7",
-    "typescript": "^4.3.5"
+    "@eslint/js": "9.39.5",
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "24.19.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@types/react-transition-group": "4.4.12",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.4.3",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-prettier": "5.5.7",
+    "postcss": "8.5.31",
+    "prettier": "3.9.10",
+    "tailwindcss": "4.3.3",
+    "typescript": "6.0.3"
   }
 }

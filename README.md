@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Ricardo Barbosa — Portfolio
 
-## Getting Started
+Personal portfolio built with Next.js and the Pages Router. English is served at `/` and Portuguese at `/pt` using Next.js internationalized routing. Page data lives in `_data/`; static assets and the localized CV files live in `public/`.
 
-First, run the development server:
+## Requirements
 
-**Node version: 16.***
+- Node.js 24.22.1 (see `.nvmrc`)
+- npm 11.19.1, bundled with the pinned Node.js release
 
-```bash
-npm run dev
-# or
-yarn dev
+Use a Node version manager to select the repository runtime, then install the locked dependencies:
+
+```sh
+nvm use
+npm ci
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Development
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```sh
+npm run dev
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Open [http://localhost:3000](http://localhost:3000). The site uses the Next.js Pages Router; keep localized routing and static generation in `pages/` and `getStaticProps`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Quality checks and production build
 
-## Learn More
+Run each check independently:
 
-To learn more about Next.js, take a look at the following resources:
+```sh
+npm run lint
+npm run typecheck
+npm run format:check
+npm run build
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The package matrix is pinned in `package.json` and the lockfile. Tailwind 3.4.19 is an intermediate migration checkpoint; the finished project uses Tailwind 4.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+`npm start` serves the production build on port 3000 by default. The production runtime must use Node.js 24.22.1. This repository does not contain a hosting-provider or CI runtime declaration, so configure the deployment environment separately before release.
 
-## Deploy on Vercel
+## Dependency maintenance
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The lockfile is authoritative; use `npm ci` for clean installs and do not bypass peer dependency checks. TypeScript 6.0.3 is held because the TypeScript ESLint parser included by the Next.js lint configuration supports TypeScript `<6.1.0`. ESLint 9.39.5 is held because React, import, and accessibility lint plugins in the Next.js configuration do not declare ESLint 10 support. The ESLint 9 release line reached end of life on 2026-08-06, so this is a known tooling maintenance limitation; recheck the complete peer dependency tree and upgrade to a supported ESLint release as soon as the included plugins declare compatibility.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Tailwind CSS 4 uses its CSS theme in `styles/globals.css`; the custom fonts, colors, breakpoints, grid areas, and negative margin are part of the site layout and should be preserved when changing tokens.

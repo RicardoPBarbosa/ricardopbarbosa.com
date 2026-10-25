@@ -31,7 +31,9 @@ const Header: FC<{ data: HeaderData }> = ({ data }) => (
         <Image
           src={Photo}
           alt={data.photoAlt}
-          className="rounded-full"
+          fill
+          sizes="(min-width: 1280px) 224px, (min-width: 1024px) 192px, (min-width: 768px) 160px, (min-width: 640px) 144px, 128px"
+          className="rounded-full object-cover"
           quality={100}
           placeholder="blur"
         />

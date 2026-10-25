@@ -4,5 +4,7 @@ module.exports = {
     defaultLocale: 'en',
     localeDetection: false
   },
-  // webpack5: false,
+  images: {
+    qualities: [75, 100]
+  }
 }
