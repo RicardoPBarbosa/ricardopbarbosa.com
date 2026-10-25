@@ -14,7 +14,7 @@ const Contacts: FC<{ data: ContactsData; display: 'drawer' | 'body' }> = ({
     className={`${
       display === 'drawer'
         ? 'grid md:hidden'
-        : 'hidden md:grid -ml-2.5 contacts-area mt-2'
+        : 'hidden md:grid -ml-[0.65rem] contacts-area mt-2'
     }`}
   >
     <ul className="flex flex-col space-y-2 md:space-y-3">

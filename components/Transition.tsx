@@ -1,23 +1,9 @@
-import {
-  ReactNode,
-  useRef,
-  useEffect,
-  useContext,
-  createContext,
-  ReactElement
-} from 'react'
-import { CSSTransition as ReactCSSTransition } from 'react-transition-group'
-
-type TransitionContextProps = {
-  parent: {
-    appear?: boolean
-    isInitialRender: boolean
-    show: boolean
-  }
-}
+import { ReactElement, ReactNode, RefObject } from 'react'
+import { CSSTransition } from 'react-transition-group'
 
 type TransitionProps = {
   show: boolean
+  nodeRef: RefObject<HTMLDivElement | null>
   enter: string
   enterFrom: string
   enterTo: string
@@ -28,113 +14,57 @@ type TransitionProps = {
   children: ReactNode
 }
 
-const TransitionContext = createContext<TransitionContextProps>({
-  parent: {
-    appear: false,
-    isInitialRender: true,
-    show: false
-  }
-})
-
-const useIsInitialRender = () => {
-  const isInitialRender = useRef(true)
-  useEffect(() => {
-    isInitialRender.current = false
-  }, [])
-  return isInitialRender.current
-}
-
-const CSSTransition = ({
-  show,
-  enter = '',
-  enterFrom = '',
-  enterTo = '',
-  leave = '',
-  leaveFrom = '',
-  leaveTo = '',
-  appear,
-  children
-}: TransitionProps) => {
-  const enterClasses = enter.split(' ').filter((s) => s.length)
-  const enterFromClasses = enterFrom.split(' ').filter((s) => s.length)
-  const enterToClasses = enterTo.split(' ').filter((s) => s.length)
-  const leaveClasses = leave.split(' ').filter((s) => s.length)
-  const leaveFromClasses = leaveFrom.split(' ').filter((s) => s.length)
-  const leaveToClasses = leaveTo.split(' ').filter((s) => s.length)
-
-  const addClasses = (node: HTMLElement, classes: string[]) => {
-    classes.length && node.classList.add(...classes)
-  }
-
-  const removeClasses = (node: HTMLElement, classes: string[]) => {
-    classes.length && node.classList.remove(...classes)
-  }
-
-  return (
-    <ReactCSSTransition
-      appear={appear}
-      unmountOnExit
-      in={show}
-      addEndListener={(node, done) => {
-        node.addEventListener('transitionend', done, false)
-      }}
-      onEnter={(node: HTMLElement) => {
-        addClasses(node, [...enterClasses, ...enterFromClasses])
-      }}
-      onEntering={(node: HTMLElement) => {
-        removeClasses(node, enterFromClasses)
-        addClasses(node, enterToClasses)
-      }}
-      onEntered={(node: HTMLElement) => {
-        removeClasses(node, [...enterToClasses, ...enterClasses])
-      }}
-      onExit={(node: HTMLElement) => {
-        addClasses(node, [...leaveClasses, ...leaveFromClasses])
-      }}
-      onExiting={(node: HTMLElement) => {
-        removeClasses(node, leaveFromClasses)
-        addClasses(node, leaveToClasses)
-      }}
-      onExited={(node: HTMLElement) => {
-        removeClasses(node, [...leaveToClasses, ...leaveClasses])
-      }}
-    >
-      {children}
-    </ReactCSSTransition>
-  )
-}
+const splitClasses = (classes: string) => classes.split(' ').filter(Boolean)
 
 const Transition = ({
   show,
+  nodeRef,
+  enter,
+  enterFrom,
+  enterTo,
+  leave,
+  leaveFrom,
+  leaveTo,
   appear,
-  ...rest
+  children
 }: TransitionProps): ReactElement => {
-  const { parent } = useContext<TransitionContextProps>(TransitionContext)
-  const isInitialRender = useIsInitialRender()
-  const isChild = show === undefined
-
-  if (isChild) {
-    return (
-      <CSSTransition
-        appear={parent.appear || !parent.isInitialRender}
-        show={parent.show}
-        {...rest}
-      />
-    )
+  const addClasses = (classes: string[]) => {
+    nodeRef.current?.classList.add(...classes)
   }
 
+  const removeClasses = (classes: string[]) => {
+    nodeRef.current?.classList.remove(...classes)
+  }
+
+  const enterClasses = splitClasses(enter)
+  const enterFromClasses = splitClasses(enterFrom)
+  const enterToClasses = splitClasses(enterTo)
+  const leaveClasses = splitClasses(leave)
+  const leaveFromClasses = splitClasses(leaveFrom)
+  const leaveToClasses = splitClasses(leaveTo)
+
   return (
-    <TransitionContext.Provider
-      value={{
-        parent: {
-          show,
-          isInitialRender,
-          appear
-        }
+    <CSSTransition
+      nodeRef={nodeRef}
+      appear={appear}
+      unmountOnExit
+      in={show}
+      timeout={{ enter: 100, exit: 75 }}
+      onEnter={() => addClasses([...enterClasses, ...enterFromClasses])}
+      onEntering={() => {
+        removeClasses(enterFromClasses)
+        addClasses(enterToClasses)
       }}
+      onEntered={() => removeClasses([...enterToClasses, ...enterClasses])}
+      onExit={() => addClasses([...leaveClasses, ...leaveFromClasses])}
+      onExiting={() => {
+        removeClasses(leaveFromClasses)
+        addClasses(leaveToClasses)
+      }}
+      onExited={() => removeClasses([...leaveToClasses, ...leaveClasses])}
     >
-      <CSSTransition appear={appear} show={show} {...rest} />
-    </TransitionContext.Provider>
+      {children}
+    </CSSTransition>
   )
 }
 

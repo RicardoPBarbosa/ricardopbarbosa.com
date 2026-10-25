@@ -30,42 +30,23 @@
     "techSkills": [
       {
         "skill": "HTML & CSS",
-        "subSkills": [
-          "SASS",
-          "Bootstrap",
-          "Material",
-          "TailwindCSS"
-        ]
+        "subSkills": ["SASS", "Bootstrap", "Material", "TailwindCSS"]
       },
       {
         "skill": "Javascript",
-        "subSkills": [
-          "Vanilla",
-          "jQuery",
-          "Typescript"
-        ]
+        "subSkills": ["Vanilla", "jQuery", "Typescript"]
       },
       {
         "skill": "React.js",
-        "subSkills": [
-          "Redux",
-          "Next.js"
-        ]
+        "subSkills": ["Redux", "Next.js"]
       },
       {
         "skill": "Node.js",
-        "subSkills": [
-          "Express.js",
-          "Adonis.js",
-          "Nest.js"
-        ]
+        "subSkills": ["Express.js", "Adonis.js", "Nest.js"]
       },
       {
         "skill": "PHP",
-        "subSkills": [
-          "OO",
-          "Laravel"
-        ]
+        "subSkills": ["OO", "Laravel"]
       },
       {
         "skill": "React Native",
@@ -179,12 +160,6 @@
   },
   "interests": {
     "title": "Interesses",
-    "list": [
-      "Viajar",
-      "Ler",
-      "Cinema",
-      "Música",
-      "Tecnologia"
-    ]
+    "list": ["Viajar", "Ler", "Cinema", "Música", "Tecnologia"]
   }
 }
